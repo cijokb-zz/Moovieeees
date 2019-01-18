@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
 import Login from './Login';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { login } from '../authentication/AuthActions';
+
 class LoginContainer extends Component {
     constructor(props) {
         super(props);
@@ -9,23 +13,12 @@ class LoginContainer extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             username: null,
-            password: null,
-            authenticated: localStorage.getItem("userToken") || false,
-            error: false
+            password: null
         }
     }
 
     handleSubmit() {
-
-        if (this.state.username === "test" && this.state.password === "1234") {
-            console.log("loign sucessfull");
-            localStorage.setItem("userToken", "123456");
-            this.setState({ authenticated: true });
-        }
-        else {
-            this.setState({ error: true });
-            console.log("login failed :  Invalid user");
-        }
+        this.props.login(this.state.username, this.state.password);
     }
 
     //handling keyboard input for login details
@@ -35,14 +28,26 @@ class LoginContainer extends Component {
         this.setState(stateObject);
     }
     render() {
-        if (this.state.authenticated) {
+        if (this.props.authenticated) {
             return <Redirect to="/movies" />
 
         }
         return (
-            <Login handleSubmit={this.handleSubmit} handleChange={this.handleChange} error={this.state.error} />
+            <Login handleSubmit={this.handleSubmit} handleChange={this.handleChange} error={this.props.error} />
         );
     }
 };
 
-export default LoginContainer;
+
+function mapStateToProps({ user }) {
+    return {
+        authenticated: user.authenticated,
+        authError: user.authError
+    }
+}
+function mapDispatchToProps(dispatch) {
+    return {
+        login: bindActionCreators(login, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

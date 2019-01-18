@@ -1,12 +1,12 @@
 import React from 'react';
 
-const MovieRow = ({ title, genere, duration, language }) => {
+const MovieRow = ({ Title, Year, imdbID, Type }) => {
     return (
         <tr>
-            <td>{title}</td>
-            <td>{genere}</td>
-            <td>{duration}</td>
-            <td>{language}</td>
+            <td>{Title}</td>
+            <td>{Year}</td>
+            <td>{imdbID}</td>
+            <td>{Type}</td>
         </tr>
     );
 };

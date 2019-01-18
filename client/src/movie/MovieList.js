@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieRow from './MovieRow';
-const MovieDetails = ({ data }) => {
+const MovieList = ({ data }) => {
     return (
         <div className="MovieDetails">
             {data ?
@@ -8,13 +8,13 @@ const MovieDetails = ({ data }) => {
                     <tbody>
                         <tr>
                             <th>Title</th>
-                            <th>Genre</th>
-                            <th>Language</th>
-                            <th>Duration</th>
+                            <th>Year</th>
+                            <th>imdbID</th>
+                            <th>Type</th>
                         </tr>
                         {
-                            data.map(function (item) {
-                                return (<MovieRow {...item} key={item.id} />)
+                            data.map(function (item, index) {
+                                return (<MovieRow {...item} key={index} />)
                             })
                         }
                     </tbody>
@@ -24,4 +24,4 @@ const MovieDetails = ({ data }) => {
     );
 };
 
-export default MovieDetails;
+export default MovieList;

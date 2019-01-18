@@ -1,7 +1,8 @@
-import MovieListContainer from './MovieListContainer';
+import MovieContainer from './MovieContainer';
 import MovieRow from './MovieRow';
 import MovieList from './MovieList';
+import MovieSearch from './MovieSearch';
 
 export {
-    MovieList, MovieListContainer, MovieRow
+    MovieList, MovieContainer, MovieRow, MovieSearch
 }

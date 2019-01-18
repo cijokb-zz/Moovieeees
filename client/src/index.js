@@ -9,13 +9,18 @@ import initialState from './initialState';
 import configStore from './store/configureStore';
 import { Provider } from 'react-redux';
 
-const store = configStore(initialState);
+import { PersistGate } from 'redux-persist/lib/integration/react';
+
+
+const { store, persistor } = configStore(initialState);
 
 const Root = () => (
     <Provider store={store}>
-        <Router>
-            <App />
-        </Router>
+        <PersistGate loading={null} persistor={persistor}>
+            <Router>
+                <App />
+            </Router>
+        </PersistGate>
     </Provider>
 );
 ReactDOM.render(<Root />, document.getElementById('root'));
