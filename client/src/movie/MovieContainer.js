@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
 import { Redirect } from "react-router-dom";
-import Movie from './Movie';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchMovies } from './MovieActions';
-
+import MovieList from './MovieList';
+import MovieSearch from './MovieSearch';
 
 
 
 class MovieContainer extends Component {
-    componentDidMount() {
-        this.props.fetchMovies();
+    constructor(props) {
+        super(props);
+        this.searchMovie = this.searchMovie.bind(this);
+    }
+    searchMovie(name) {
+        this.props.fetchMovies(name);
     }
     render() {
         if (!this.props.authenticated) {
             return <Redirect to="/login" />
         }
         return (<div>
-            {this.props.data ? <Movie data={this.props.data} /> : null}
+            <MovieSearch searchMovie={this.searchMovie} />
+            {this.props.data ? <MovieList data={this.props.data} /> : null}
         </div>
         );
     }
