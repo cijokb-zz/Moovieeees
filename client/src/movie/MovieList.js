@@ -3,7 +3,7 @@ import MovieRow from './MovieRow';
 const MovieList = ({ data }) => {
     return (
         <div className="MovieDetails">
-            {data ?
+            {data && data.length ?
                 <table style={{ "margin": "auto" }}>
                     <tbody>
                         <tr>
