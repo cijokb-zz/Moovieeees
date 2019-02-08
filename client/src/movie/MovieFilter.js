@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { DropDown } from '../common';
-const MovieFilter = ({ data, title, filterMovies }) => (
+const MovieFilter = ({ filters, title, filterMovies }) => (
     <div className="movie-filter">
-        <DropDown data={data} title={title} dropDownFilter={filterMovies} />
+        <DropDown filters={filters} title={title} dropDownFilter={filterMovies} />
     </div>
 );
 

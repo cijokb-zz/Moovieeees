@@ -1,33 +1,43 @@
+
 import React, { Component, Suspense } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { Route, withRouter } from 'react-router-dom';
 import AuthenticateRoute from '../authentication';
-import './App.css';
+import './App.scss';
 import LoginContainer from '../login';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { NavBar } from '../common';
 
 import { logout } from '../authentication/AuthActions';
 
 const MovieContainer = React.lazy(() => import('../movie/MovieContainer'));
+//const LoginContainer = React.lazy(() => import('../login/LoginContainer'));
 
+type Props = {
+  authenticated: boolean,
+  logout: () => void
+};
 
-class App extends Component {
-  componentDidMount() {
-
-  }
+class App extends Component<Props> {
   render() {
     return (
-      <div className="App">
-        <h1>Welcome user</h1>
-        {
-          this.props.authenticated ? <button onClick={this.props.logout}>Logout</button> : null
-        }
-        <Suspense fallback={<div>Loading....</div>}>
-          <Route exact path="/login" component={LoginContainer} />
-          <AuthenticateRoute exact path="/" component={MovieContainer} authenticated={this.props.authenticated} />
-          <AuthenticateRoute component={MovieContainer} path="/movies" authenticated={this.props.authenticated} />
-        </Suspense>
-      </div >
+      <div>
+        <header>
+          <NavBar authenticated={this.props.authenticated} logout={this.props.logout} />
+        </header>
+        <main>
+          <Container>
+            <Suspense fallback={<div>Loading....</div>}>
+              <Route exact path="/login" component={LoginContainer} />
+              <AuthenticateRoute exact path="/" component={MovieContainer} authenticated={this.props.authenticated} />
+              <AuthenticateRoute component={MovieContainer} path="/movies" authenticated={this.props.authenticated} />
+            </Suspense>
+          </Container>
+        </main>
+      </div>
     );
   }
 }

@@ -1,0 +1,553 @@
+
+> client@0.1.0 flow D:\reactredux\client
+> flow
+
+Error ---------------------------------------------------------------------------------------------- src/app/App.js:3:35
+
+Cannot resolve module `react-router-dom`.
+
+   3| import { Route, withRouter } from 'react-router-dom';
+                                        ^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- src/app/App.js:5:8
+
+Cannot resolve module `./App.scss`.
+
+   5| import './App.scss';
+             ^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- src/app/App.js:7:25
+
+Cannot resolve module `react-redux`.
+
+   7| import { connect } from 'react-redux';
+                              ^^^^^^^^^^^^^
+
+
+Error ---------------------------------------------------------------------------------------------- src/app/App.js:8:36
+
+Cannot resolve module `redux`.
+
+   8| import { bindActionCreators } from 'redux';
+                                         ^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------ src/app/App.test.js:5:1
+
+Cannot resolve name `it`.
+
+   5| it('renders without crashing', () => {
+      ^^
+
+
+Error --------------------------------------------------------------------------- src/authentication/AuthActions.js:4:16
+
+Missing type annotation for `username`.
+
+   4| const login = (username, password) => {
+                     ^^^^^^^^
+
+
+Error --------------------------------------------------------------------------- src/authentication/AuthActions.js:4:26
+
+Missing type annotation for `password`.
+
+   4| const login = (username, password) => {
+                               ^^^^^^^^
+
+
+Error --------------------------------------------------------------------- src/authentication/AuthenticateRoute.js:2:33
+
+Cannot resolve module `react-router-dom`.
+
+   2| import { Route, Redirect } from "react-router-dom";
+                                      ^^^^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------- src/authentication/AuthenticateRoute.js:4:28
+
+Missing type annotation for destructuring.
+
+   4| const AuthenticateRoute = ({ component: Component, ...rest }) => {
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/AreaChart.js:2:19
+
+Cannot resolve module `react-google-charts`.
+
+   2| import Chart from 'react-google-charts';
+                        ^^^^^^^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- src/common/DropDown.js:2:24
+
+Cannot use `Component` [1] with fewer than 1 type argument.
+
+   src/common/DropDown.js:2:24
+    2| class DropDown extends Component {
+                              ^^^^^^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:30
+   26| declare class React$Component<Props, State = void> {
+                                    ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error -------------------------------------------------------------------------------------- src/common/DropDown.js:3:17
+
+Missing type annotation for `props`.
+
+   3|     constructor(props) {
+                      ^^^^^
+
+
+Error --------------------------------------------------------------------------------------- src/common/DropDown.js:5:9
+
+Cannot assign `this.toggleList.bind(...)` to `this.toggleList` because property `toggleList` is not writable.
+
+   5|         this.toggleList = this.toggleList.bind(this);
+              ^^^^^^^^^^^^^^^
+
+
+Error --------------------------------------------------------------------------------------- src/common/DropDown.js:6:9
+
+Cannot assign `this.selectItem.bind(...)` to `this.selectItem` because property `selectItem` is not writable.
+
+   6|         this.selectItem = this.selectItem.bind(this);
+              ^^^^^^^^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- src/common/DropDown.js:7:22
+
+Cannot assign object literal to `this.state` because object literal [1] is incompatible with undefined [2].
+
+   src/common/DropDown.js:7:22
+                            v-
+    7|         this.state = {
+    8|             itemSelected: false,
+    9|             list: [],
+   10|             open: false,
+   11|             selectedItem: null
+   12|         };
+               ^ [1]
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:14:31
+
+Missing type annotation for `nextProps`.
+
+   14|     componentWillReceiveProps(nextProps) {
+                                     ^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:15:23
+
+Cannot call `this.setState` with object literal bound to `partialState` because property `list` is missing in
+undefined [1] but exists in object literal [2].
+
+   src/common/DropDown.js:15:23
+   15|         this.setState({ list: nextProps.data });
+                             ^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:17:16
+
+Missing type annotation for `e`.
+
+   17|     toggleList(e) {
+                      ^
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:19:23
+
+Cannot call `this.setState` with object literal bound to `partialState` because property `open` is missing in
+undefined [1] but exists in object literal [2].
+
+   src/common/DropDown.js:19:23
+   19|         this.setState({ open: !this.state.open });
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:19:32
+
+Cannot get `this.state.open` because property `open` is missing in undefined [1].
+
+   src/common/DropDown.js:19:32
+   19|         this.setState({ open: !this.state.open });
+                                      ^^^^^^^^^^^^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:21:16
+
+Missing type annotation for `e`.
+
+   21|     selectItem(e) {
+                      ^
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:25:23
+
+Cannot call `this.setState` with object literal bound to `partialState` because property `selectedItem` is missing in
+undefined [1] but exists in object literal [2].
+
+   src/common/DropDown.js:25:23
+   25|         this.setState({ selectedItem: type });
+                             ^^^^^^^^^^^^^^^^^^^^^^ [2]
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:29:22
+
+Cannot get `this.state.list` because property `list` is missing in undefined [1].
+
+   src/common/DropDown.js:29:22
+   29|         const list = this.state.list;
+                            ^^^^^^^^^^^^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/DropDown.js:33:29
+
+Property `open` is missing in undefined [1].
+
+   src/common/DropDown.js:33:29
+   33|                 {this.state.open && list ?
+                                   ^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------ src/common/InfiniteScroller.js:2:32
+
+Cannot use `Component` [1] with fewer than 1 type argument.
+
+   src/common/InfiniteScroller.js:2:32
+    2| class InfiniteScroller extends Component {
+                                      ^^^^^^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:30
+   26| declare class React$Component<Props, State = void> {
+                                    ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------ src/common/InfiniteScroller.js:4:17
+
+Missing type annotation for `props`.
+
+   4|     constructor(props) {
+                      ^^^^^
+
+
+Error ------------------------------------------------------------------------------ src/common/InfiniteScroller.js:6:22
+
+Cannot assign object literal to `this.state` because object literal [1] is incompatible with undefined [2].
+
+   src/common/InfiniteScroller.js:6:22
+                            v-
+    6|         this.state = {
+    7| 
+    8|         };
+               ^ [1]
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:46
+   26| declare class React$Component<Props, State = void> {
+                                                    ^^^^ [2]
+
+
+Error ------------------------------------------------------------------------------- src/common/InfiniteScroller.js:9:9
+
+Cannot assign `React.createRef()` to `this.InfiniteScrollerRef` because property `InfiniteScrollerRef` is missing in
+`InfiniteScroller` [1].
+
+   src/common/InfiniteScroller.js:9:9
+   9|         this.InfiniteScrollerRef = React.createRef();
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   src/common/InfiniteScroller.js:2:7
+   2| class InfiniteScroller extends Component {
+            ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------ src/common/InfiniteScroller.js:14:9
+
+Cannot get `this.InfiniteScrollerRef` because property `InfiniteScrollerRef` is missing in `InfiniteScroller` [1].
+
+   src/common/InfiniteScroller.js:14:9
+   14|         this.InfiniteScrollerRef.current.addEventListener('scroll', () => {
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   src/common/InfiniteScroller.js:2:7
+    2| class InfiniteScroller extends Component {
+             ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------- src/common/InfiniteScroller.js:20:52
+
+Cannot get `this.InfiniteScrollerRef` because property `InfiniteScrollerRef` is missing in `InfiniteScroller` [1].
+
+   src/common/InfiniteScroller.js:20:52
+   20|             <div className="InfiniteScroller" ref={this.InfiniteScrollerRef} style={{ height: (this.props.height || '250') + 'px', overflow: 'scroll' }}>
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   src/common/InfiniteScroller.js:2:7
+    2| class InfiniteScroller extends Component {
+             ^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/LineChart.js:2:23
+
+Cannot resolve module `react-charts`.
+
+   2| import { Chart } from "react-charts";
+                            ^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/LineChart.js:3:29
+
+Cannot resolve module `redux-persist/es/stateReconciler/autoMergeLevel1`.
+
+   3| import autoMergeLevel1 from "redux-persist/es/stateReconciler/autoMergeLevel1";
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------ src/common/LineChart.js:73:20
+
+Missing type annotation for destructuring.
+
+   73| const LineChart = ({ data }) => (
+                          ^^^^^^^^
+
+
+Error -------------------------------------------------------------------------------------- src/common/Resizable.js:2:8
+
+Cannot resolve module `./resizable.scss`.
+
+   2| import './resizable.scss';
+             ^^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:3:25
+
+Cannot use `Component` [1] with fewer than 1 type argument.
+
+   src/common/Resizable.js:3:25
+    3| class Resizable extends Component {
+                               ^^^^^^^^^
+
+References:
+   C:\Users\cijo.kb\AppData\Local\Temp\flow\flowlib_39c8aa07\react.js:26:30
+   26| declare class React$Component<Props, State = void> {
+                                    ^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:8:17
+
+Missing type annotation for `props`.
+
+   8|     constructor(props) {
+                      ^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:10:9
+
+Cannot assign `this.handleResize.bind(...)` to `this.handleResize` because property `handleResize` is not writable.
+
+   10|         this.handleResize = this.handleResize.bind(this);
+               ^^^^^^^^^^^^^^^^^
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:11:9
+
+Cannot assign `React.createRef()` to `this.resizeCont` because property `resizeCont` is missing in `Resizable` [1].
+
+   src/common/Resizable.js:11:9
+   11|         this.resizeCont = React.createRef();
+               ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ src/common/Resizable.js:13:18
+
+Missing type annotation for `e`.
+
+   13|     handleResize(e) {
+                        ^
+
+
+Error ------------------------------------------------------------------------------------ src/common/Resizable.js:14:25
+
+Cannot get `this.resizeCont` because property `resizeCont` is missing in `Resizable` [1].
+
+   src/common/Resizable.js:14:25
+   14|         let container = this.resizeCont.current;
+                               ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ src/common/Resizable.js:16:71
+
+Cannot get `this.innerWidth` because property `innerWidth` is missing in `Resizable` [1].
+
+   src/common/Resizable.js:16:71
+   16|         let calcWidth = window.document.documentElement.clientWidth - this.innerWidth;
+                                                                             ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:35:9
+
+Cannot assign `window.document.documentElement.clientWidth` to `this.innerWidth` because property `innerWidth` is
+missing in `Resizable` [1].
+
+   src/common/Resizable.js:35:9
+   35|         this.innerWidth = window.document.documentElement.clientWidth;
+               ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------- src/common/Resizable.js:39:9
+
+Cannot assign `window.document.documentElement.clientWidth` to `this.innerWidth` because property `innerWidth` is
+missing in `Resizable` [1].
+
+   src/common/Resizable.js:39:9
+   39|         this.innerWidth = window.document.documentElement.clientWidth;
+               ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ------------------------------------------------------------------------------------ src/common/Resizable.js:46:27
+
+Cannot get `this.resizeCont` because property `resizeCont` is missing in `Resizable` [1].
+
+   src/common/Resizable.js:46:27
+   46|         return (<div ref={this.resizeCont} style={{ width: width + 'px', height: height + 'px' }} className="resizable-container">
+                                 ^^^^^^^^^^^^^^^
+
+References:
+   src/common/Resizable.js:3:7
+    3| class Resizable extends Component {
+             ^^^^^^^^^ [1]
+
+
+Error ----------------------------------------------------------------------------------- src/helpers/apiHelper.js:15:13
+
+Missing type annotation for `url`.
+
+   15|     callApi(url, config) {
+                   ^^^
+
+
+Error ----------------------------------------------------------------------------------- src/helpers/apiHelper.js:15:18
+
+Missing type annotation for `config`.
+
+   15|     callApi(url, config) {
+                        ^^^^^^
+
+
+Error ------------------------------------------------------------------------------------------------ src/index.js:5:41
+
+Cannot resolve module `react-router-dom`.
+
+   5| import { BrowserRouter as Router } from 'react-router-dom';
+                                              ^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- src/index.js:10:26
+
+Cannot resolve module `react-redux`.
+
+   10| import { Provider } from 'react-redux';
+                                ^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- src/index.js:12:29
+
+Cannot resolve module `redux-persist/lib/integration/react`.
+
+   12| import { PersistGate } from 'redux-persist/lib/integration/react';
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Error ----------------------------------------------------------------------------------------------- src/index.js:15:30
+
+Cannot call `configStore` because:
+ - a callable signature is missing in module `./configureStore.prod` [1].
+ - ... 1 more error.
+
+   src/index.js:15:30
+   15| const { store, persistor } = configStore(initialState);
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+References:
+   src/store/configureStore.js:2:22
+    2|     module.exports = require('./configureStore.prod');
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ [1]
+
+
+
+... 50 more errors (only 50 out of 100 errors displayed)
+To see all errors, re-run Flow with --show-all-errors
+
+Only showing the most relevant union/intersection branches.
+To see all branches, re-run Flow with --show-all-branches

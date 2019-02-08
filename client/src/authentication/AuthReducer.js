@@ -1,7 +1,16 @@
+//@flow
 import intialState from '../initialState';
 import * as types from './AuthActionTypes';
 
-function authActionsReducer(state = intialState.user, action) {
+
+type Action = { type: typeof types.LOGOUT_SUCCESS } | { type: typeof types.LOGOUT_FAILED } | { type: typeof types.LOGIN_SUCCESS } | { type: typeof types.LOGIN_FAILED };
+
+type UserState = {
+    authenticated: boolean,
+    authError: boolean
+}
+
+function authActionsReducer(state: UserState = intialState.user, action: Action) {
     switch (action.type) {
         case types.LOGIN_SUCCESS:
             return Object.assign({}, state, { authenticated: true, authError: false });

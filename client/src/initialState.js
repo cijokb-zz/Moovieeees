@@ -1,11 +1,16 @@
 const initialState = {
     user: {
-        authenticated: false,
         name: null,
         email: null,
-        authError: false
+        authenticated: false,
+        authError: false,
     },
-    movies: []
+    movies:
+    {
+        all: [],
+        fliterSet: [],
+        filter: ''
+    }
 };
 
 export default initialState;

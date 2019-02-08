@@ -1,0 +1,7 @@
+{
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "jshint.options": {
+        "esversion": 6
+    },
+}
