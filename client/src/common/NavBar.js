@@ -2,10 +2,11 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { race } from 'q';
 
 const NavBar = ({ authenticated, logout }) => (
     <Navbar bg="dark" expand="lg" fixed="top" variant="dark">
-        <Navbar.Brand href="#home">Movieeee</Navbar.Brand>
+        <Navbar.Brand href="#home">Movieeees</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -17,3 +18,4 @@ const NavBar = ({ authenticated, logout }) => (
 );
 
 export default NavBar;
+

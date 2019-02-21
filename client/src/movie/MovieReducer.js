@@ -38,6 +38,7 @@ function getFilterSet(data) {
         }
     });
 
+    filterSet.length <= 2 && filterSet.shift();
     return filterSet;
 }
 // function movieFilterReducer(state = initialState.filteredMovies, action) {

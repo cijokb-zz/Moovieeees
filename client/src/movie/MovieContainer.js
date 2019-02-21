@@ -49,11 +49,14 @@ class MovieContainer extends Component<Props, State> {
             <MovieSearch searchMovie={this.searchMovie} />
             <Suspense fallback={<div>Loading....</div>}>
                 {this.props.movies && this.props.movies.length > 0 ? <div>
-                    <MovieFilter filters={this.props.filterSet} title="Filter Movies" filterMovies={this.filterMovies} />
-                    <MovieList data={this.props.movies} />
+                    {this.props.filterSet.length > 1 ? <MovieFilter filters={this.props.filterSet} title="Filter Movies" filterMovies={this.filterMovies} /> : null}
+                    <MovieList data={this.props.movies} viewType="Card" />
+                    {/*
                     <Resizable width={1000} height={300}>
                         <AreaChart data={data} />
-                    </Resizable>
+                    </Resizable
+                    */
+                    }
                 </div> : null}
             </Suspense>
 

@@ -24,17 +24,19 @@ type Props = {
 class App extends Component<Props> {
   render() {
     return (
-      <div>
+      <div className="App">
         <header>
           <NavBar authenticated={this.props.authenticated} logout={this.props.logout} />
         </header>
         <main>
-          <Container>
-            <Suspense fallback={<div>Loading....</div>}>
-              <Route exact path="/login" component={LoginContainer} />
-              <AuthenticateRoute exact path="/" component={MovieContainer} authenticated={this.props.authenticated} />
-              <AuthenticateRoute component={MovieContainer} path="/movies" authenticated={this.props.authenticated} />
-            </Suspense>
+          <Container fluid={true}>
+            <Row>
+              <Suspense fallback={<div>Loading....</div>}>
+                <Route exact path="/login" component={LoginContainer} />
+                <AuthenticateRoute exact path="/" component={MovieContainer} authenticated={this.props.authenticated} />
+                <AuthenticateRoute component={MovieContainer} path="/movies" authenticated={this.props.authenticated} />
+              </Suspense>
+            </Row>
           </Container>
         </main>
       </div>
